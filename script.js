@@ -1,51 +1,22 @@
+var currentDay = moment().format("dddd LL");
+$("#currentDay").append(currentDay);
+
+var currentTime = moment().format("LT");
+$("#currentTime").append(currentTime);
+
+
 let saveBtn = $(".saveBtn");
 
 
-function saveTasks () {
-    let currentTime = $(this).data("hour");
-    let rowHour = $(this).siblings(".hour").text();
-    let task = $(this).siblings(".textarea").val();
-
-    
-    if (task === "") {
-        localStorage.setItem(textarea, "");
-    }
-    else {
-        localStorage.setItem(textarea, task);
-    }
-}
-
-saveBtn.on("click", saveTasks);
-
-
-
-description.each(function () {
-    let timeBlock = parseInt($(this).attr("id"));
-
-    if (timeBlock === currentHour) {
-        $(this).addClass("present");
-        $(this).removeClass("future");
-        $(this).removeClass("past");
-    }
-    else if (timeBlock < currentHour) {
-        $(this).addClass("past");
-        $(this).removeClass("future");
-        $(this).removeClass("present");
-    }
-    else {
-        $(this).addClass("future");
-        $(this).removeClass("past");
-        $(this).removeClass("present");
-    }
-});
-
-
-description.each(function() {
-
-    for (let i = 0; i < localStorage.length; i++) {
-        let objectKey = localStorage.key(i);
-        let taskValue = localStorage.getItem(textarea);
-        let rowHour = $(this).siblings("").text();
-}
-
-})
+// load any saved data from localStorage
+$(".saveBtn .textarea").val(localStorage.getItem("#hour7"));
+$(".saveBtn .textarea").val(localStorage.getItem("#hour8"));
+$("#hour9AM .textarea").val(localStorage.getItem("#hour9"));
+$("#hour10AM .textarea").val(localStorage.getItem("#hour10"));
+$("#hour11AM .textarea").val(localStorage.getItem("#hour11"));
+$("#hour12PM.textarea").val(localStorage.getItem("#hour12"));
+$("#hour1PM .textarea").val(localStorage.getItem("#hour1"));
+$("#hour2PM .textarea").val(localStorage.getItem("#hour2"));
+$("#hour3PM .textarea").val(localStorage.getItem("#hour3"));
+$("#hour4PM .textarea").val(localStorage.getItem("#hour4"));
+$("#hour5PM .textarea").val(localStorage.getItem("#hour5"));
