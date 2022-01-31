@@ -1,3 +1,4 @@
+//set live time to jumbotron
 var currentDay = moment().format("dddd LL");
 $("#currentDay").append(currentDay);
 
@@ -7,16 +8,26 @@ $("#currentTime").append(currentTime);
 
 let saveBtn = $(".saveBtn");
 
+//Save Local Storage
+saveBtn.on('click',function(event){
+    var text = ($(event.target.previousElementSibling).val())
+    var key = (event.target.id)
+    localStorage.setItem(key,text)
+})
 
-// load any saved data from localStorage
-$(".saveBtn .textarea").val(localStorage.getItem("#hour7"));
-$(".saveBtn .textarea").val(localStorage.getItem("#hour8"));
-$("#hour9AM .textarea").val(localStorage.getItem("#hour9"));
-$("#hour10AM .textarea").val(localStorage.getItem("#hour10"));
-$("#hour11AM .textarea").val(localStorage.getItem("#hour11"));
-$("#hour12PM.textarea").val(localStorage.getItem("#hour12"));
-$("#hour1PM .textarea").val(localStorage.getItem("#hour1"));
-$("#hour2PM .textarea").val(localStorage.getItem("#hour2"));
-$("#hour3PM .textarea").val(localStorage.getItem("#hour3"));
-$("#hour4PM .textarea").val(localStorage.getItem("#hour4"));
-$("#hour5PM .textarea").val(localStorage.getItem("#hour5"));
+
+
+// Pulls any saved data from localStorage
+$("#hour7AM").val(localStorage.getItem("button7AM"));
+$("#hour8AM").val(localStorage.getItem("button8AM"));
+$("#hour9AM").val(localStorage.getItem("button9AM"));
+$("#hour10AM").val(localStorage.getItem("button10AM"));
+$("#hour11AM").val(localStorage.getItem("button11AM"));
+$("#hour12PM").val(localStorage.getItem("button12PM"));
+$("#hour1PM").val(localStorage.getItem("button1PM"));
+$("#hour2PM").val(localStorage.getItem("button2PM"));
+$("#hour3PM").val(localStorage.getItem("button3PM"));
+$("#hour4PM").val(localStorage.getItem("button4PM"));
+$("#hour5PM").val(localStorage.getItem("button5PM"));
+
+
