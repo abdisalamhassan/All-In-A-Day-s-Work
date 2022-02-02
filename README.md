@@ -1,9 +1,17 @@
 ## Description
 This is a simply daily planner app which allows the user to save events. It runs within the browser and uses the following technologies:
 -HTML
+
+
 -CSS
+
+
 -Moment.js
+
+
 -Javascript
+
+
 -jQuery
 
 ## How it works
